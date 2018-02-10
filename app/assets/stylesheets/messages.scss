@@ -1,3 +1,80 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  display: flex;
+}
+
+.side-bar {
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+  color: #FFFFFF;
+  .header {
+    height :100px;
+    background-color: #253141;
+    padding: 0 20px;
+    line-height: 100px;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__lists {
+      float: right;
+    }
+    .list {
+      display: inline-block;
+    }
+    .fa {
+      color: #FFFFFF;
+    }
+  }
+  .groups {
+    padding: 0 20px;
+    .group {
+      padding: 20px 0 40px;
+      &__name {
+        font-size: 15px;
+      }
+      &__message {
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.chat {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  .header {
+    height: 100px;
+    padding: 0 40px;
+    border-bottom: 1px solid #eeeeee;
+    .left-header {
+      float: left;
+      &__title {
+        font-size: 20px;
+        color: #333333;
+        margin-top: 35px;
+      }
+      &__members {
+        font-size: 12px;
+        color: #999999;
+        margin-top: 15px;
+        display: flex;
+      }
+    }
+    .right-header {
+      float: right;
+      height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      line-height: 40px;
+      border: 2px solid #38AEF0;
+      &__button {
+        color: #38AEF0;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
