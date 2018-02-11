@@ -43,11 +43,12 @@
 }
 
 .chat {
-  width: calc(100vw - 300px);
+  width: calc(100% - 300px);
   .header {
     height: 100px;
     padding: 0 40px;
     border-bottom: 1px solid #eeeeee;
+    box-sizing: border-box;
     .left-header {
       float: left;
       &__title {
@@ -79,6 +80,7 @@
     height: calc(100vh - 100px - 90px);
     background-color: #FAFAFA;
     padding: 46px 40px 0;
+    box-sizing: border-box;
     .message {
       margin-bottom: 40px;
       .upper-message {
@@ -98,6 +100,41 @@
         font-size: 14px;
         color: #434A54;
         margin-top: 10px;
+      }
+    }
+  }
+  .form {
+    height: 90px;
+    background-color: #DDDDDD;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    .form-content {
+      &__message {
+        height: 50px;
+        width: calc(100% - 150px);
+        padding: 0 10px;
+        float: left;
+        box-sizing: border-box;
+        border: none;
+      }
+      &__image {
+        height: 50px;
+        background-color: #fff;
+        float: left;
+        padding-right: 10px;
+        &__btn {
+          font-size: 20px;
+          line-height: 50px;
+        }
+      }
+      &__send {
+        height: 50px;
+        float: right;
+        background-color: #38AEF0;
+        color: #fff;
+        padding: 0 30px;
+        margin-left: 15px;
+        border: none;
       }
     }
   }
