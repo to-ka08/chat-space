@@ -6,7 +6,7 @@
         = current_user.name
       %ul.header__lists
         %li.list
-          = link_to do
+          = link_to new_group_path do
             %i.fa.fa-edit
         %li.list
           = link_to edit_user_path do
@@ -39,7 +39,7 @@
           %li.member
             k t k
       .right-header
-        = link_to 'Edit', '#', class: "right-header__button"
+        = link_to 'Edit', "#", class: "right-header__button"
 
     .messages
       .message
