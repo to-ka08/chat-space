@@ -8,9 +8,9 @@
     /       %li エラーです
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :name, "グループ名"
+        = f.label :name, "グループ名", class: "chat-group-form__label"
       .chat-group-form__field--right
-        = f.text_field :name, placeholder: "グループ名を入力してください"
+        = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__input"
     .chat-group-form__field.clearfix
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       /
@@ -25,7 +25,7 @@
         </div>
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :"チャットメンバー", :"チャットメンバー"
+        = f.label :"チャットメンバー", :"チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         = f.collection_check_boxes(:user_ids, User.all, :id, :name)
         / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
@@ -39,4 +39,4 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        %input.chat-group-form__action-btn{"data-disable-with": "Save", name: "commit", type: "submit", value: "Save"}/
+        = f.submit "Save", class: "chat-group-form__action-btn"
