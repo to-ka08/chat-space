@@ -1,33 +1,6 @@
 .wrapper
 
-  .side-bar
-    .header
-      %h3.header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          = link_to new_group_path do
-            %i.fa.fa-edit
-        %li.list
-          = link_to edit_user_path do
-            %i.fa.fa-cog
-
-    .groups
-      .group
-        .group__name
-          group name
-        .group__message
-          まだメッセージはありません
-      .group
-        .group__name
-          group name
-        .group__message
-          まだメッセージはありません
-      .group
-        .group__name
-          group name
-        .group__message
-          まだメッセージはありません
+  = render 'shared/side_bar'
 
   .chat
     .header
