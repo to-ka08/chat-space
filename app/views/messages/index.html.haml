@@ -36,9 +36,10 @@
 
     .form
       .form-content
-        %input.form-content__message{type: "text", placeholder: "type a message"}
-        .form-content__image
-          %label.form-content__image__btn
-            %i.fa.fa-image
-            %input{type: "file", id: "file_photo", style: "display:none;"}
-        %input.form-content__send{type: "submit", value: "Send"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :body, class: "form-content__message", placeholder: "type a message"
+          .form-content__image
+            = f.label :image, class: "form-content__image__btn" do
+              = fa_icon "picture-o"
+              = f.file_field :image, style: "display: none;"
+          = f.submit "Send", class: "form-content__send"
