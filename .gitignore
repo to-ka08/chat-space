@@ -15,3 +15,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore uploads image
+/public/uploads/message/image
