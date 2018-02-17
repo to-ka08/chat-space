@@ -20,11 +20,13 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rspec-rails'
-gem 'factory_girl_rails', "~> 4.4.1"
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
 end
 
 group :development do
