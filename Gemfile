@@ -21,6 +21,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rspec-rails'
+gem 'factory_girl_rails', "~> 4.4.1"
 
 group :development, :test do
   gem 'byebug', platform: :mri
