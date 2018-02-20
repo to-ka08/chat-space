@@ -63,6 +63,11 @@
         font-size: 14px;
         color: $heavyBlue;
         margin-top: 10px;
+
+        img {
+          width: 200px;
+          object-fit: contain;
+        }
       }
     }
   }
