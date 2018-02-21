@@ -38,5 +38,8 @@ $(function() {
       $('.form-content__send').prop('disabled', false);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
+    .fail(function(){
+      alert('error');
+    })
   })
 })
