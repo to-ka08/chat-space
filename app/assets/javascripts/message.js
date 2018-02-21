@@ -36,6 +36,7 @@ $(function() {
       $('.form-content__message').val('');
       $('#message_image').val('');
       $('.form-content__send').prop('disabled', false);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
-  });
-});
+  })
+})
