@@ -41,6 +41,7 @@
     background-color: #FAFAFA;
     padding: 46px 40px 0;
     box-sizing: border-box;
+    overflow: auto;
 
     .message {
       margin-bottom: 40px;
@@ -63,6 +64,11 @@
         font-size: 14px;
         color: $heavyBlue;
         margin-top: 10px;
+
+        img {
+          width: 200px;
+          object-fit: contain;
+        }
       }
     }
   }
