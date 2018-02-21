@@ -34,7 +34,8 @@ $(function() {
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.form-content__message').val('');
-      $('.form-content__image').val('');
+      $('#message_image').val('');
+      $('.form-content__send').prop('disabled', false);
     })
   });
 });
