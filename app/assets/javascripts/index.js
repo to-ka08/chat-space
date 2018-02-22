@@ -1,6 +1,6 @@
 $(function() {
 
-var user_list = $('#chat-group-users');
+var user_list = $('#user-search-result');
 
 function appendUser(user) {
   var html = `<div class="chat-group-user clearfix">
@@ -24,7 +24,7 @@ function appendNoUser(user) {
       dataType: 'json'
     })
     .done(function(users) {
-      $('#chat-group-users').empty();
+      $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user){
           appendUser(user);
@@ -33,6 +33,9 @@ function appendNoUser(user) {
       else {
         appendNoUser("一致するユーザーはいません");
       }
+    })
+    .fail(function() {
+      alert('ユーザー検索に失敗しました')
     })
   });
 });
