@@ -55,4 +55,8 @@ function addUser(id, name) {
     addUser(id, name);
     $(this).parent().remove();
   });
+
+  $(document).on('click', '.js-remove-btn', function() {
+    $(this).parent().remove();
+  });
 });
