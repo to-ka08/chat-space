@@ -53,5 +53,6 @@ function addUser(id, name) {
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
     addUser(id, name);
+    $(this).parent().remove();
   });
 });
