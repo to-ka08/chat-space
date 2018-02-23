@@ -44,9 +44,12 @@ $(function() {
     })
   })
 
-    var interval = setInterval(function() {
+  function update(){
+    if ($('.message')[0]){
       var lastMessageId = $('.message:last').data('message-id');
-      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    } else {
+      var lastMessageId = 0
+    }
     $.ajax({
       url: location.href,
       type: "GET",
@@ -65,7 +68,12 @@ $(function() {
     .fail(function() {
       alert('自動更新に失敗しました');
     })
-  } else {
-    clearInterval(interval);
-    }}, 5000 )
+  }
+  $(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var interval = setInterval(update, 5000);
+    } else {
+      clearInterval(interval);
+    }
+  })
 })
