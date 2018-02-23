@@ -44,21 +44,28 @@ $(function() {
     })
   })
 
-    setInterval(function() {
+    var interval = setInterval(function() {
+      var lastMessageId = $('.message:last').data('message-id');
+      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
-      url: location.href.json
+      url: location.href,
+      type: "GET",
+      data: { id: lastMessageId },
+      dataType: 'json'
     })
-    .done(function(data) {
+    .done(function(messages) {
       var insertHTML = '';
-      json.messages.forEach(function(message) {
-        insertHTML += buildHTML(message);
+      messages.forEach(function(message) {
+        if (message.id > lastMessageId ) {
+          insertHTML += buildHTML(message);
+        }
       });
-      $('.messages').append(insertHTML)
+      $('.messages').append(insertHTML);
     })
     .fail(function() {
       alert('自動更新に失敗しました');
     })
-  // } else {
-  //   clearInterval(interval);
-    }, 5000 )
+  } else {
+    clearInterval(interval);
+    }}, 5000 )
 })
