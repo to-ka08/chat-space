@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message){
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.user_name}
@@ -49,10 +49,16 @@ $(function() {
       url: location.href.json
     })
     .done(function(data) {
+      var insertHTML = '';
+      json.messages.forEach(function(message) {
+        insertHTML += buildHTML(message);
+      });
+      $('.messages').append(insertHTML)
     })
-    .fail(function(data) {
+    .fail(function() {
+      alert('自動更新に失敗しました');
     })
-  } else {
-    clearInterval(interval);
+  // } else {
+  //   clearInterval(interval);
     }, 5000 )
 })
