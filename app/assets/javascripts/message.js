@@ -40,6 +40,7 @@ $(function() {
     })
     .fail(function(){
       alert('error');
+      $('.form-content__send').prop('disabled', false);
     })
   })
 })
